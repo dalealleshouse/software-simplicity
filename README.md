@@ -1,6 +1,9 @@
 # Software Simplicity
 
-## What is Complexity
+## The Case for Simplicity
+
+Pretty much every software engineering thought leader espouses simplicity:
+
 - Considered next to testing and reasoning, simplicity is more important than
     either. An investment in simplicity, is often the better choice because it
     will facilitate all future attempts to understand the system — attempts of
@@ -12,9 +15,6 @@
 - The only way to write complex software that won’t fall on its face is
     to hold its global complexity down, to build it out of simple parts — Eric
     S.  Raymond
-- Simple can be harder than complex: You have to work hard to get your thinking
-    clean to make it simple. But it’s worth it in the end because once you get
-    there, you can move mountains. — Steve Jobs
 - Simplicity is a prerequisite for reliability.— Edsger Dijkstra 
 - The price of reliability is the pursuit of the utmost simplicity— Tony Hoare
 
@@ -22,11 +22,67 @@ Every programmer should aim to write the simplest possible program which solves
 the problem.
 
 Everyone talks about the need for simplicity, but never asks the question, "what
-is simple?".
+is simple?". The question is best framed by first defining it's inverse:
+complexity.
 
+## What is Complexity
+
+
+There are many definitions of complexity, but my favorite is from John
+Ousterhout's outstanding book *A Philosophy of Software Design*. "Complexity is
+anything related to the structure of a software system that makes it hard to
+understand and modify"
+
+![Complexity
+Formula](https://latex.codecogs.com/gif.latex?C=&space;\sum_{p}&space;c_{p}t_{p})
+
+The overall complexity (![C](https://latex.codecogs.com/gif.latex?C)) is
+determined by the complexity of each part
+(![c_{p}](https://latex.codecogs.com/gif.latex?c_{p})) weighted by the fraction
+of time developers spend working on that part
+(![t_{p}](https://latex.codecogs.com/gif.latex?t_{p}))
+
+
+## Three Symptoms of Complexity
+
+1. Change amplification - A simple change requires many code modifications
+1. Cognitive load - How much a developer needs to know in order to complete a
+   task.
+   - APIs with many methods, global variables, inconsistencies, dependencies
+       between modules
+   - Sometimes an approach that requires more lines of code is simpler because
+       it reduces cognitive load
+1. Unknown unknowns: it is not obvious which pieces of code must be modified to
+   complete a task, or what information a developer must have to carry out a
+   task
+   - These are by far the worst
+   - The best way to reduce complexity is to make code *obvious*
+
+ ## What Causes Complexity
+
+ 1. Dependencies
+    - One of the goals of software design is to reduce the number of
+        dependencies and make the necessary ones as obvious as possible.
+ 1. Obscurity
+    - Important information is not obvious
+    - Inconsistency often contributes to obscurity
+    - The need for extensive documentation is a sign that your design is too
+        obscure
+
+Complexity is never caused by a single catastrophic oversight. It accumulates
+slowly like filth in a floor crack. The path to simplicity is one of determined
+vigilance.
+
+
+
+
+
+---
 "Debugging is twice as hard as writing the code in the first place. Therefore,
 if you write the code as cleverly as possible, you are, by definition, not smart
 enough to debug it." - Brian Kernighan
+
+
 
 No Silver Bullet — Essence and Accidents of Software Engineering - Fred Brooks
 
@@ -193,3 +249,10 @@ Because even though managing complexity is our second most important
 responsibility, we must always remember the most important responsibility of
 software developers: delivering value through working software.
 https://www.simplethread.com/software-complexity-killing-us/
+
+## Managing Software Complexity
+
+Two Approaches
+1. Make code simpler and more obvious
+1. Encapsulate it so that programmers can work on a system without being exposed
+   to all the complexity at once
