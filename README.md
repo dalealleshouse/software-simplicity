@@ -1,14 +1,14 @@
-# Software Simplicity
+# Complexity is Evil Incarnate
 
 ## The Case for Simplicity
 
-Pretty much every software engineering thought leader espouses simplicity:
+Pretty much every software engineering luminary espouses simplicity:
 
 - Considered next to testing and reasoning, simplicity is more important than
     either. An investment in simplicity, is often the better choice because it
     will facilitate all future attempts to understand the system — attempts of
     any kind. - Ben Moseley and Peter Marks
-- (Software design is) a craft… and it has a lot to do with valuing simplicity
+- [Software design is] a craft… and it has a lot to do with valuing simplicity
     over complexity — Barbara Liskov
 - We need to build simple systems, if we want to build good systems — Rich
     Hickey 
@@ -18,29 +18,51 @@ Pretty much every software engineering thought leader espouses simplicity:
 - Simplicity is a prerequisite for reliability.— Edsger Dijkstra 
 - The price of reliability is the pursuit of the utmost simplicity— Tony Hoare
 
-Every programmer should aim to write the simplest possible program which solves
-the problem.
+Axiom #1 of software engineering:
+> Every programmer primary goal should be to write the simplest possible program
+> which solves the problem.
 
-Everyone talks about the need for simplicity, but never asks the question, "what
-is simple?". The question is best framed by first defining it's inverse:
-complexity.
+Unfortunately, this axiom well known yet seldom understood
 
 ## What is Complexity
 
+The first rule of constructing logical arguments: clear definition of terms
 
-There are many definitions of complexity, but my favorite is from John
-Ousterhout's outstanding book *A Philosophy of Software Design*. "Complexity is
-anything related to the structure of a software system that makes it hard to
-understand and modify"
+> Complexity is anything related to the structure of a software system that makes
+> it hard to understand and modify
+> - *A Philosophy of Software Design* by John Ousterhout 
 
-![Complexity
-Formula](https://latex.codecogs.com/gif.latex?C=&space;\sum_{p}&space;c_{p}t_{p})
+Two Types of Complexity (as defined by Fred Brooks and later augmented by Ben
+Moseley and Peter Marks)
+
+- *Essential Complexity* - is inherit in, and the essence of, the problem (as
+    seen by the user)
+- *Accidental Complexity* - Complexity with which the development team would not
+    have to deal in the ideal world (complexity arising from performance issues
+    and from suboptimal language and infrastructure)
 
 The overall complexity (![C](https://latex.codecogs.com/gif.latex?C)) is
 determined by the complexity of each part
 (![c_{p}](https://latex.codecogs.com/gif.latex?c_{p})) weighted by the fraction
 of time developers spend working on that part
 (![t_{p}](https://latex.codecogs.com/gif.latex?t_{p}))
+
+![Complexity
+Formula](https://latex.codecogs.com/gif.latex?C=&space;\sum_{p}&space;c_{p}t_{p})
+
+## Simplicity Nuances
+
+Simplicity is difficult to demonstrate
+- There is no simplicity checklist
+- Techniques used to simplify a large system often over-complicate a small one;
+    therefore, examples are difficult.
+    * Examples small enough to comprehend in a tutorial aren't complex enough to
+        demonstrate salient concepts
+    * Typically leads to rampant over-engineering
+
+ Simplicity 
+
+
 
 
 ## Three Symptoms of Complexity
@@ -92,14 +114,6 @@ No Silver Bullet — Essence and Accidents of Software Engineering - Fred Brooks
 
 Fred Brooks
 
-> Essential Complexity - is inherit in, and the essence of, the problem (as seen
-> by the user)
-
-> Accidental Complexity - Complexity with which the development team would not
-> have to deal in the ideal world (complexity arising from performance issues
-> and from suboptimal language and infrastructure)
-
-Ben Moseley and Peter Marks
 
 The goal is to remove accidental complexity via smart architecture and choice of
 tools
