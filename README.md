@@ -19,18 +19,15 @@ Pretty much every software engineering luminary espouses simplicity:
 - The price of reliability is the pursuit of the utmost simplicity— Tony Hoare
 
 Axiom #1 of software engineering:
-> Every programmer primary goal should be to write the simplest possible program
-> which solves the problem.
+> Every programmer's primary goal should be to create the simplest possible
+> software which solves the problem.
 
-Unfortunately, this axiom well known yet seldom understood
+Unfortunately, this axiom is well known yet seldom fully understood. The goal of
+this piece is to cultivate complexity acumen.
 
 ## What is Complexity
 
 The first rule of constructing logical arguments: clear definition of terms
-
-> Complexity is anything related to the structure of a software system that makes
-> it hard to understand and modify
-> - *A Philosophy of Software Design* by John Ousterhout 
 
 Two Types of Complexity (as defined by Fred Brooks and later augmented by Ben
 Moseley and Peter Marks)
@@ -40,15 +37,33 @@ Moseley and Peter Marks)
 - *Accidental Complexity* - Complexity with which the development team would not
     have to deal in the ideal world (complexity arising from performance issues
     and from suboptimal language and infrastructure)
+    
+**From here forward, assume *complexity* refers to *accidental complexity***
 
-The overall complexity (![C](https://latex.codecogs.com/gif.latex?C)) is
-determined by the complexity of each part
-(![c_{p}](https://latex.codecogs.com/gif.latex?c_{p})) weighted by the fraction
-of time developers spend working on that part
-(![t_{p}](https://latex.codecogs.com/gif.latex?t_{p}))
+Complexity Defined:
+> Complexity is anything related to the structure of a software system that
+> makes it hard to understand and modify - *A Philosophy of Software Design* by
+> John Ousterhout 
 
-![Complexity
-Formula](https://latex.codecogs.com/gif.latex?C=&space;\sum_{p}&space;c_{p}t_{p})
+An important distinction is that *system complexity* is a different concept than
+*localized complexity*. Software is composed of many individual parts (modules,
+classes, etc...).
+- *Localized Complexity* - complexity as viewed from within an individual part
+    of the system.
+- *System Complexity* - complexity in how each individual part interacts
+
+Localized complexity is no doubt unfavorable. However, system complexity is
+cataclysmic.
+
+
+*System Complexity* defined :
+> The overall complexity (![C](https://latex.codecogs.com/gif.latex?C)) is
+> determined by the complexity of each part
+> (![c_{p}](https://latex.codecogs.com/gif.latex?c_{p})) weighted by the
+> fraction of time developers spend working on that part
+> (![t_{p}](https://latex.codecogs.com/gif.latex?t_{p}))
+>
+> ![Complexity](https://latex.codecogs.com/gif.latex?C=&space;\sum_{p}&space;c_{p}t_{p})
 
 ## Simplicity Nuances
 
