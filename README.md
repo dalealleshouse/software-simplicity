@@ -2,8 +2,15 @@
 
 ![Complexity Battle](complexity-battle.jpg)
 
-## The Case for Simplicity
+Join the band of noble warriors that vow to rid the land of this wretched beast
+that plagues our repositories, terrorizes our backlogs, and devours the fruits
+of our labor. Complexity's reign of terror must end! But be warned, only the
+true in heart can hope to survive an encounter with this most despicable of
+creatures. The bones of many a noble programmer lie strewn about the brute's
+lair. Scorching fire, razor-sharp teeth, and crushing death await ye. Yet for
+those courageous enough to face the trials, glory, honor, and immortality await!
 
+## The Case for Simplicity
 Pretty much every software engineering luminary espouses simplicity:
 
 - [Software design is] a craft… and it has a lot to do with valuing simplicity
@@ -72,6 +79,9 @@ complexity is limited by your competency.
 1. System Complexity
 
 ## Automated Complexity Measures
+There are amazing algorithms that are capable of identifying complexity via
+static code analysis. This is the easiest type of complexity to mitigate.
+
 Cyclomatic Complexity 
 - First introduced in 1976 by Thomas J. McCabe in seminal paper *A Complexity
     Measure*
@@ -82,24 +92,47 @@ Cyclomatic Complexity
         (Complexity = (number of edges) - (number of nodes) + 2)
 - The most common accepted limit is 10, but it's just a guideline
     * For those fascinated by Psychology, look up *The Magic Number 7, Plus or
-        Minus Two* for some insight into this number
+        Minus Two* for some insight into that number
 - Many attempts to improve:
     * LCOM4
     * NPath
     * Coupling Ratio - ratio between efferent & total coupling
-    * Coupling and Cohesion of modules
+    * etc...
 
 Measuring software complexity is an ongoing academic pursuit (some would even
 call it a holy grail). The subject is WAY to deep to give it justice here.
 
 Most controversial of all complexity reduction techniques. However, its' the
-**ONLY** technique that has actual empirical data attached to it.
+**ONLY** technique that is backed by actual empirical data.
 - 1989 - Software Defect Prevention Using McCabe's Complexity Metric by William
     T. Ward found "64% statistical correlation between cyclomatic complexity and
     defect density"
 
+Automated Complexity measures are easy and IMPORTANT. Ignore them at your own
+peril. They encourage things like (non-exhaustive):
+- Simple logic
+- Small functions
+- Modular design
+
+Automated measure are not perfect. There are some shortcomings because they:
+- Overly focused on Algorithmic Complexity
+- Can not access how easy software is for a human to understand.
+
+   our intellectual powers are rather geared to master static relations and that
+   our powers to visualize processes evolving in time are relatively poorly
+   developed. For that reason we should do (as wise programmers aware of our
+   limitations) our utmost to shorten the conceptual gap between the static
+   program and the dynamic process, to make the correspondence between the
+   program (spread out in text space) and the process (spread out in time) as
+   trivial as possible.
+
+Keep data together is easy to understand
 On the down side, in spite of the many advantages, automated measures can never
-truly access how easy software is for a human to understand.
+truly access how easy software is for a human to understand. Algorithmic
+complexity doesn't access even simple things such as meaningful variable names.
+Additionally, 
+Therefore, it's never a good idea to impose oppressive controls based on
+automated complexity measures.
 
 > Key Concept:
 >
@@ -117,30 +150,6 @@ manufacturing.
 
 When measuring complexity, it is important to look holistically at coupling,
 cohesion, SQL complexity, use of frameworks, and algorithmic complexity.
-
-- Coupling Ratio - ratio between efferent & total coupling 
-- LCOM4 algorithm
-- Cyclomatic Complexity
-    * Measures the number of "linearly independent paths" through a piece of
-        code
-    * unique path where we count loops only once
-    * control flow graph
-        - Node = computation
-        - Edge = transfer of control between nodes
-        - M = E - N + 2
-        - Complexity = (number of edges) - (number of nodes) + 2
-    * simply count the number of of if, while, for, and case statements
-    * Shortcomings
-        - Not all statements contribute equally to complexity
-        - Does not properly weight complexity caused by nested
-        - No accounting for cognitive complexity
-- NPath
-    * acyclic execution path
-    * unique path through the code
-- Coupling and cohesion of modules
-
-
-
 
 ## Naive Complexity
 
@@ -428,13 +437,6 @@ Two Approaches
 1. Encapsulate it so that programmers can work on a system without being exposed
    to all the complexity at once
 
-   our intellectual powers are rather geared to master static relations and that
-   our powers to visualize processes evolving in time are relatively poorly
-   developed. For that reason we should do (as wise programmers aware of our
-   limitations) our utmost to shorten the conceptual gap between the static
-   program and the dynamic process, to make the correspondence between the
-   program (spread out in text space) and the process (spread out in time) as
-   trivial as possible.
 
 For any given code you want to write, there are likely multiple way to write it,
 and not a lot of wisdom about which one to choose.
@@ -457,6 +459,29 @@ absolute scale. But can we perhaps measure them on a relative scale—can we say
 that program A is better or worse than program B? Unfortunately, we will
 generally not even be able to do that, for several reasons. First of all, when
 is there ever another program with which to compare?”20
+
+It's a well know fact that the Dragon of Grindly Grun was actually just a
+software project with complexity run awry.
+<pre>
+The Dragon Of Grindly Grun - Poem by Shel Silverstein
+
+I'm the Dragon of Grindly Grun, 
+I breathe fire as hot as the sun. 
+When a knight comes to fight 
+I just toast him on sight, 
+Like a hot crispy cinnamon bun. 
+
+When I see a fair damsel go by, 
+I just sigh a fiery sigh, 
+And she'd baked like a 'tater- 
+I think of her later 
+With a romantic tear in my eye. 
+
+I'm the Dragon of Grindly Grun, 
+But my lunches aren't very much fun, 
+For I like my damsels medium rare, 
+and they always come out well done. 
+</pre>
 
 ## Bibliography
 - A Complexity Measure, T.J. McCabe
