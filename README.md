@@ -1,13 +1,11 @@
 # Complexity is Evil Incarnate
 
+![Complexity Battle](complexity-battle.jpg)
+
 ## The Case for Simplicity
 
 Pretty much every software engineering luminary espouses simplicity:
 
-- Considered next to testing and reasoning, simplicity is more important than
-    either. An investment in simplicity, is often the better choice because it
-    will facilitate all future attempts to understand the system — attempts of
-    any kind. - Ben Moseley and Peter Marks
 - [Software design is] a craft… and it has a lot to do with valuing simplicity
     over complexity — Barbara Liskov
 - We need to build simple systems, if we want to build good systems — Rich
@@ -17,8 +15,13 @@ Pretty much every software engineering luminary espouses simplicity:
     S.  Raymond
 - Simplicity is a prerequisite for reliability.— Edsger Dijkstra 
 - The price of reliability is the pursuit of the utmost simplicity— Tony Hoare
+- Considered next to testing and reasoning, simplicity is more important than
+    either. An investment in simplicity, is often the better choice because it
+    will facilitate all future attempts to understand the system — attempts of
+    any kind. - Ben Moseley and Peter Marks
 
-Axiom #1 of software engineering:
+> ### Axiom #1 of software engineering:
+>
 > Every programmer's primary goal should be to create the simplest possible
 > software which solves the problem.
 
@@ -26,44 +29,213 @@ Unfortunately, this axiom is well known yet seldom fully understood. The goal of
 this piece is to cultivate complexity acumen.
 
 ## What is Complexity
+High Level Definition of Complexity:
+> Complexity is anything related to the structure of a software system that
+> makes it hard to understand and modify - *A Philosophy of Software Design* by
+> John Ousterhout 
 
-The first rule of constructing logical arguments: clear definition of terms
+Two papers about complexity that every software professional should read:
+- No Silver Bullet, Fred Brooks, 1986
+- Out of the Tar Pit, Ben Moseley and Peter Marks, 2006
 
-Two Types of Complexity (as defined by Fred Brooks and later augmented by Ben
-Moseley and Peter Marks)
-
+Two Types of Complexity:
 - *Essential Complexity* - is inherit in, and the essence of, the problem (as
     seen by the user)
 - *Accidental Complexity* - Complexity with which the development team would not
     have to deal in the ideal world (complexity arising from performance issues
     and from suboptimal language and infrastructure)
     
-**From here forward, assume *complexity* refers to *accidental complexity***
+> ### Key Concept:
+>
+> From here forward, assume *complexity* refers to *accidental complexity*
 
-Complexity Defined:
-> Complexity is anything related to the structure of a software system that
-> makes it hard to understand and modify - *A Philosophy of Software Design* by
-> John Ousterhout 
+> ### Quiz 1
+> Classify each source of complexity as either essential or accidental:
+> 1. Design patterns
+> 1. Regulatory Laws
+> 1. Requirements
+> 1. Friction between software tools (e.g. Karma and IntelliJ)
+>
+> Is it possible to completely eliminate accidental complexity?
+> - Yes
+> - No
+>
+> [Answers](Quiz-1.md)
+
+## Levels of Complexity Competency
+Like any competency, understanding software complexity isn't binary. There are
+levels of understanding (think Bloom Taxonomy). Your ability to combat
+complexity is limited by your competency.
+
+1. Automated Complexity Measures
+1. Localized Complexity
+1. System Complexity
+
+## Automated Complexity Measures
+Cyclomatic Complexity 
+- First introduced in 1976 by Thomas J. McCabe in seminal paper *A Complexity
+    Measure*
+- Code is modeled as a graph where a Node = computation and an Edge = transfer
+    of control
+    * ![Cyclomatic
+        Complexity](https://latex.codecogs.com/gif.latex?M=E-N&plus;2)
+        (Complexity = (number of edges) - (number of nodes) + 2)
+- The most common accepted limit is 10, but it's just a guideline
+    * For those fascinated by Psychology, look up *The Magic Number 7, Plus or
+        Minus Two* for some insight into this number
+- Many attempts to improve:
+    * LCOM4
+    * NPath
+    * Coupling Ratio - ratio between efferent & total coupling
+    * Coupling and Cohesion of modules
+
+Measuring software complexity is an ongoing academic pursuit (some would even
+call it a holy grail). The subject is WAY to deep to give it justice here.
+
+Most controversial of all complexity reduction techniques. However, its' the
+**ONLY** technique that has actual empirical data attached to it.
+- 1989 - Software Defect Prevention Using McCabe's Complexity Metric by William
+    T. Ward found "64% statistical correlation between cyclomatic complexity and
+    defect density"
+
+On the down side, in spite of the many advantages, automated measures can never
+truly access how easy software is for a human to understand.
+
+> Key Concept:
+>
+> It is possible to game automated complexity measurements. Additionally, lower
+> complexity measures don't necessarily equate to lower perceived complexity.
+> However, they are an excellent "canary" metric.
+
+---
+
+
+
+One of the tragedies of software engineering is that, in industry at least,
+we've successfully avoided the metrics-based quality revolution that transformed
+manufacturing. 
+
+When measuring complexity, it is important to look holistically at coupling,
+cohesion, SQL complexity, use of frameworks, and algorithmic complexity.
+
+- Coupling Ratio - ratio between efferent & total coupling 
+- LCOM4 algorithm
+- Cyclomatic Complexity
+    * Measures the number of "linearly independent paths" through a piece of
+        code
+    * unique path where we count loops only once
+    * control flow graph
+        - Node = computation
+        - Edge = transfer of control between nodes
+        - M = E - N + 2
+        - Complexity = (number of edges) - (number of nodes) + 2
+    * simply count the number of of if, while, for, and case statements
+    * Shortcomings
+        - Not all statements contribute equally to complexity
+        - Does not properly weight complexity caused by nested
+        - No accounting for cognitive complexity
+- NPath
+    * acyclic execution path
+    * unique path through the code
+- Coupling and cohesion of modules
+
+
+
+
+## Naive Complexity
+
+With software complexity, there are generally two levels of comprehension.
+- Naive
+    * Think Georg Cantor's Naive Set Theory
+    * Immensely important
+- Advanced
+    * 
+
+---
+## Empirical Evidence
+
+For nearly all of history, people’s lives have been governed primarily by
+ignorance. … Failures of ignorance we can forgive. If the knowledge of the best
+thing to do in a given situation does not exist, we are happy to have people
+simply make their best effort. But if the knowledge exists and is not applied
+correctly, it is difficult not to be infuriated. … It is not for nothing that
+philosophers gave these failures so unmerciful a name—ineptitude.
+
+Is software development really hard, or are software developers not that good at
+it? Certainly there are parts of software that are hard, but software developers
+seem to do everything in their power to make even the easy parts harder by
+wasting an inordinate amount of time on reinvention and inefficient approaches.
+
+Much of what has been espoused in software engineering in the last twenty
+years—Agile development, unit testing, the debate about errors versus
+exceptions, and the benefits of different programming languages—has been
+presented without any experimental backing.
+
+Sturgeon’s law, coined by the science fiction writer Theodore Sturgeon, which
+posits that “90% of everything is crap.”
+
+“Researchers solve problems that are solvable, not necessarily ones that are
+real.”
+
+If you’re like me, you dream of a day when software engineering is studied in a
+thoughtful, methodical way, and the guidance given to programmers sits atop a
+foundation of experimental results rather than the shifting sands of individual
+experience.
+*The Problem With Software: Why Smart Engineers Write Bad Code*, Adam Barr
+
+
+Today we have faster hardware, more expressive programming languages, and better
+debugging tools. But if you read the old books, it is clear that the fundamental
+issues have not changed.
+
+Internet theory, “If you want somebody to explain something to you, then give a
+wrong explanation in public.”
+
+ insight from Socrates: “The good craftsmen seemed to have the same fault as the
+ poets: each of them, because of his success at his craft, thought himself very
+ wise in other most important pursuits, and this error of theirs overshadows the
+ wisdom they had.”
+
+
+Software engineering is gravely hampered today by immature practices. Specific
+problems include: – The prevalence of fads more typical of a fashion industry
+than of an engineering discipline – The lack of a sound, widely accepted
+theoretical basis – The huge number of methods and method variants, with
+differences little understood and artificially magnified – The lack of credible
+experimental evaluation and validation – The split between industry practice and
+academic research54
+
+
+
+
+
+*A Philosophy of Software Design*, John Ousterhout
+
+---
 
 An important distinction is that *system complexity* is a different concept than
 *localized complexity*. Software is composed of many individual parts (modules,
 classes, etc...).
 - *Localized Complexity* - complexity as viewed from within an individual part
-    of the system.
-- *System Complexity* - complexity in how each individual part interacts
+    of the system (this is where more developers concentrate their time)
+- *System Complexity* - the sum of the complexity created by the way individual
+    parts interact within the system weighted by the amount of time developers
+    spend managing the interactions.
 
-Localized complexity is no doubt unfavorable. However, system complexity is
-cataclysmic.
-
-
-*System Complexity* defined :
-> The overall complexity (![C](https://latex.codecogs.com/gif.latex?C)) is
-> determined by the complexity of each part
+More formally, *System Complexity* is defined as:
+> The overall system complexity (![C](https://latex.codecogs.com/gif.latex?C))
+> is determined by the complexity of each part
 > (![c_{p}](https://latex.codecogs.com/gif.latex?c_{p})) weighted by the
 > fraction of time developers spend working on that part
 > (![t_{p}](https://latex.codecogs.com/gif.latex?t_{p}))
 >
 > ![Complexity](https://latex.codecogs.com/gif.latex?C=&space;\sum_{p}&space;c_{p}t_{p})
+
+Localized complexity is no doubt unfavorable. However, system complexity is
+cataclysmic.
+
+It is often possible to lower system complexity by raising localized complexity.
+(more on this later)
 
 ## Simplicity Nuances
 
@@ -110,6 +282,10 @@ Complexity is never caused by a single catastrophic oversight. It accumulates
 slowly like filth in a floor crack. The path to simplicity is one of determined
 vigilance.
 
+
+Design Patterns
+- Caution: "He who fights too long against dragons becomes a dragon himself; and
+    if you gaze too long into the abyss, the abyss will gaze into you"
 
 
 
@@ -165,40 +341,6 @@ No control over software you must consume (3rd party libs, legacy, etc...)
     * The software "we" write makes up a surprisingly small portion of the
         system
 
-## Measuring Complexity
-if you can't measure it, you can't manage it.
-
-A Complexity Measure, Thomas J. McCabe - First attempt to measure - cyclomatic
-complexity
-- Correlation coefficient of .8 between complexity and defect density
-
-One of the tragedies of software engineering is that, in industry at least,
-we've successfully avoided the metrics-based quality revolution that transformed
-manufacturing. 
-
-When measuring complexity, it is important to look holistically at coupling,
-cohesion, SQL complexity, use of frameworks, and algorithmic complexity.
-
-- Coupling Ratio - ratio between efferent & total coupling 
-- LCOM4 algorithm
-- Cyclomatic Complexity
-    * Measures the number of "linearly independent paths" through a piece of
-        code
-    * unique path where we count loops only once
-    * control flow graph
-        - Node = computation
-        - Edge = transfer of control between nodes
-        - M = E - N + 2
-        - Complexity = (number of edges) - (number of nodes) + 2
-    * simply count the number of of if, while, for, and case statements
-    * Shortcomings
-        - Not all statements contribute equally to complexity
-        - Does not properly weight complexity caused by nested
-        - No accounting for cognitive complexity
-- NPath
-    * acyclic execution path
-    * unique path through the code
-- Coupling and cohesion of modules
 
 ## Principals
 
@@ -285,3 +427,56 @@ Two Approaches
 1. Make code simpler and more obvious
 1. Encapsulate it so that programmers can work on a system without being exposed
    to all the complexity at once
+
+   our intellectual powers are rather geared to master static relations and that
+   our powers to visualize processes evolving in time are relatively poorly
+   developed. For that reason we should do (as wise programmers aware of our
+   limitations) our utmost to shorten the conceptual gap between the static
+   program and the dynamic process, to make the correspondence between the
+   program (spread out in text space) and the process (spread out in time) as
+   trivial as possible.
+
+For any given code you want to write, there are likely multiple way to write it,
+and not a lot of wisdom about which one to choose.
+- Paradox of choice by Barry Schwartz - more choices do not make us happier.
+
+
+When people say, “It’s inevitable that a large program will have bugs,” they
+don’t mean inevitable in the sense, “It’s inevitable that cars will have
+accidents.” What they mean is, “We don’t have the proper software engineering
+techniques to root out all defects so we’re not even going to attempt to remove
+them all—and we’re not going to improve the techniques either.”
+
+“Patterns make it easy to make a system more complex. They achieve flexibility
+and variability by introducing levels of indirection, which can complicate a
+design. It’s better to start simple and evolve a design as needed.”
+
+1971, in The Psychology of Computer Programming, Gerald Weinberg wrote, “We
+shall be hampered by our inability to measure the goodness of programs on an
+absolute scale. But can we perhaps measure them on a relative scale—can we say
+that program A is better or worse than program B? Unfortunately, we will
+generally not even be able to do that, for several reasons. First of all, when
+is there ever another program with which to compare?”20
+
+## Bibliography
+- A Complexity Measure, T.J. McCabe
+    (https://ieeexplore.ieee.org/abstract/document/1702388)
+- No Silver Bullet - Essence and Accidents of Software Engineering, Fred Brooks
+    (https://ieeexplore.ieee.org/document/1663532)
+- Out of the Tar Pit, Ben Moseley and Peter Marks
+    (http://curtclifton.net/papers/MoseleyMarks06a.pdf)
+- The Problem With Software: Why Smart Engineers Write Bad Code, Adam Barr
+    (https://www.amazon.com/gp/product/B07HYM9WFM/ref=kinw_myk_ro_title)
+- Clean Code, Robert C. Martin
+    (https://www.amazon.com/Clean-Code-Handbook-Software-Craftsmanship/dp/0132350882/ref=sr_1_2)
+- Agile Software Development, Principals, Patterns, and Practices, Robert Martin
+    (https://www.amazon.com/Software-Development-Principles-Patterns-Practices/dp/0135974445/ref=sr_1_1)
+- A Philosophy of Software Design, John Ousterhout
+    (https://www.amazon.com/gp/product/B07N1XLQ7D/ref=kinw_myk_ro_title)
+- Taming Complexity, Jack Ganssle
+    (http://www.ganssle.com/articles/cyclomaticcomplexity.html)
+- Software Defect Prevention Using McCabe's Complexity Metric, Hewlett-Packard
+    Journal, William T. Ward
+    (http://www.hpl.hp.com/hpjournal/pdfs/IssuePDFs/1989-04.pdf)
+- The Magical Number Seven, Plus or Minus Two: Some Limits on Our Capacity for
+    Processing Information," Psychological Review, 63 (1956), 81-97
