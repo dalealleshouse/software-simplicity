@@ -12,8 +12,8 @@ those courageous enough to face the trials, glory, honor, and immortality await!
 
 Wait, wait, wait... Before you go rushing off to embrace your eminent demise,
 allow me to equip you with the required armaments. Knowledge, that is the only
-weapon that can save you from your peril. You must have a profound understand of
-the Complexity dragon if you hope to slay it.
+weapon that can save you from your peril. You must have a profound understanding
+of the Complexity dragon if you hope to slay it.
 
 Now that I have you attention, let's get serious...
 
@@ -41,6 +41,13 @@ Pretty much every software engineering luminary espouses simplicity:
 
 Unfortunately, this axiom is well known yet seldom fully understood. The goal of
 this piece is to cultivate complexity acumen.
+
+> ### Discussion Questions:
+>
+> Do you feel that you have in-depth knowledge about software complexity and how
+> to manage it?
+>
+> Where did you learn about software complexity?
 
 ## What is Complexity
 High Level Definition of Complexity:
@@ -125,13 +132,12 @@ Automated measure are not perfect. There are some shortcomings because they:
 - Overly focused on Algorithmic Complexity
 - Can not access how easy software is for a human to understand.
 
-   our intellectual powers are rather geared to master static relations and that
-   our powers to visualize processes evolving in time are relatively poorly
-   developed. For that reason we should do (as wise programmers aware of our
-   limitations) our utmost to shorten the conceptual gap between the static
-   program and the dynamic process, to make the correspondence between the
-   program (spread out in text space) and the process (spread out in time) as
-   trivial as possible.
+our intellectual powers are rather geared to master static relations and that
+our powers to visualize processes evolving in time are relatively poorly
+developed. For that reason we should do (as wise programmers aware of our
+limitations) our utmost to shorten the conceptual gap between the static program
+and the dynamic process, to make the correspondence between the program (spread
+out in text space) and the process (spread out in time) as trivial as possible.
 
 Keep data together is easy to understand
 On the down side, in spite of the many advantages, automated measures can never
