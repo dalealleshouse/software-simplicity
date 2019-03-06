@@ -88,6 +88,8 @@ Like any competency, understanding software complexity isn't binary. There are
 levels of understanding (think Bloom Taxonomy). Your ability to combat
 complexity is limited by your competency.
 
+![Complexity Comprehension Levels](complexity-comprehension.png)
+
 1. Automated Complexity Measures
 1. Localized Complexity
 1. System Complexity
