@@ -36,18 +36,15 @@ Pretty much every software engineering luminary espouses simplicity:
 
 > ### Axiom #1 of software engineering:
 >
-> Every programmer's primary goal should be to create the simplest possible
-> software which solves the problem.
-
-Unfortunately, this axiom is well known yet seldom fully understood. The goal of
-this piece is to cultivate complexity acumen.
+> Every software professional's primary goal should be to create the simplest
+> software possible.
 
 > ### Discussion Questions:
 >
-> Do you feel that you have in-depth knowledge about software complexity and how
-> to manage it?
+> Do you feel as if complexity is a rampant problem? If so, why?
 >
-> Where did you learn about software complexity?
+> Do you feel that you have in-depth knowledge about software complexity and how
+> to manage it? If so, what is the source of your knowledge.
 
 ## What is Complexity
 High Level Definition of Complexity:
@@ -83,6 +80,66 @@ Two Types of Complexity:
 >
 > [Answers](Quiz-1.md)
 
+## Why is Avoiding Complexity Difficult?
+
+Simplicity is somewhat subjective
+- Familiarity is often conflated with Simplicity
+- Justice Potter's definition of pornography: "I know it when I see it"
+
+Will you really know complexity when you see it?
+- Avoiding complexity seems simple, so it is often approached with hubris
+- "People tend to hold overly favorable views of their abilities in many social
+    and intellectual domains." - Dunning-Kruger Effect
+
+It requires time and effort
+- e n’ai fait celle-ci plus longue que parce que je n’ai pas eu le loisir de
+    la faire plus courte. Translation: *I would have written a shorter letter,
+    but I did not have the time.* - Blaise Pascal
+- "Simplicity is the most intensely intellectual of the XP values." - XP
+    Explained, Kent Beck
+- "It's impossible for simplicity to spring from simple thinking" - No Silver
+    Bullets, Fred Brooks
+    * There is no formula, checklist, or magic hammer
+
+It defies demonstration
+- Examples small enough to comprehend in a tutorial aren't complex enough to
+    demonstrate salient concepts
+- Demonstrating advanced techniques with simple examples encourages pupils to
+    overcomplicate simple code
+- Simplicity is more of a philosophical concept
+
+> Key Concept:
+>
+> What is simple to one may be complex to another. The subjective nature of the
+> topic often leads to attitudes resembling gnosticism. Simplicity is the result
+> of deliberate and vigilant effort.
+
+## Recognizing Complexity
+
+Complexity is never caused by a single catastrophic oversight. It accumulates
+slowly like filth in a floor crack. The path to simplicity is one of determined
+vigilance.
+
+
+## Where Do People Go Wrong?
+
+Oddly enough, trying to manage complexity often leads to rampant
+over-engineering
+- Design patterns make it easy to make a system more complex. They achieve
+    flexibility and variability by introducing levels of indirection, which can
+    complicate a design.
+- "He who fights too long against dragons becomes a dragon himself; and if
+    you gaze too long into the abyss, the abyss will gaze into you" - Friedrich
+    Nietzsche
+
+![XKCD](xkcd-simplicity.png)
+
+
+## How to avoid Complexity
+
+- Avoid any code that solves a problem you don't have
+- Do NOT try to engineer for the future (XP Concept)
+
 ## Levels of Complexity Competency
 Like any competency, understanding software complexity isn't binary. There are
 levels of understanding (think Bloom Taxonomy). Your ability to combat
@@ -90,7 +147,7 @@ complexity is limited by your competency.
 
 ![Complexity Comprehension Levels](complexity-comprehension.png)
 
-1. Automated Complexity Measures
+1. Automated Complexity
 1. Localized Complexity
 1. System Complexity
 
@@ -233,7 +290,6 @@ academic research54
 
 
 
-*A Philosophy of Software Design*, John Ousterhout
 
 ---
 
@@ -261,21 +317,6 @@ cataclysmic.
 It is often possible to lower system complexity by raising localized complexity.
 (more on this later)
 
-## Simplicity Nuances
-
-Simplicity is difficult to demonstrate
-- There is no simplicity checklist
-- Techniques used to simplify a large system often over-complicate a small one;
-    therefore, examples are difficult.
-    * Examples small enough to comprehend in a tutorial aren't complex enough to
-        demonstrate salient concepts
-    * Typically leads to rampant over-engineering
-
- Simplicity 
-
-
-
-
 ## Three Symptoms of Complexity
 
 1. Change amplification - A simple change requires many code modifications
@@ -301,18 +342,6 @@ Simplicity is difficult to demonstrate
     - Inconsistency often contributes to obscurity
     - The need for extensive documentation is a sign that your design is too
         obscure
-
-Complexity is never caused by a single catastrophic oversight. It accumulates
-slowly like filth in a floor crack. The path to simplicity is one of determined
-vigilance.
-
-
-Design Patterns
-- Caution: "He who fights too long against dragons becomes a dragon himself; and
-    if you gaze too long into the abyss, the abyss will gaze into you"
-
-
-
 
 ---
 "Debugging is twice as hard as writing the code in the first place. Therefore,
@@ -347,15 +376,6 @@ The math behind software complexity is just a measure to quantify. It is not
 necessary to understand it to reduce complexity.
 
 ## Simplicity is Hard
-> Simplicity is the most intensely intellectual of the XP values. To make a
-system simple enough to gracefully solve only today's problem is hard work. -
-Kent Beck
-
-> I didn't have time to write a short letter, so I wrote a long one instead -
-attributed to many different great thinkers
-
-> e n’ai fait celle-ci plus longue que parce que je n’ai pas eu le loisir de la
-faire plus courte. - Pascal
 
 Agile Doctor "high quality costs three times as much up front but is 40% cheaper
 in the long run"
@@ -373,8 +393,6 @@ Blindly following rules leads to complexity
 - SOLID
 - Composition over inheritance
 
-Simplicity is somewhat subjective
-    - Justice Potter's definition of pornography: "I know it when I see it"
 
 - The fewer the parts, the simpler the program
 - Separating from general to specific is simplifying
@@ -404,8 +422,6 @@ accept a compromise when conflicting objectives cannot be met. — Tony Hoar
 
 - Any meaningful program will become complex over time
 
-- It's impossible for simplicity to spring from simple thinking
-    - No magic bullets
 
 
 - A programming language is low level when its programs require attention to the
@@ -464,10 +480,6 @@ accidents.” What they mean is, “We don’t have the proper software engineer
 techniques to root out all defects so we’re not even going to attempt to remove
 them all—and we’re not going to improve the techniques either.”
 
-“Patterns make it easy to make a system more complex. They achieve flexibility
-and variability by introducing levels of indirection, which can complicate a
-design. It’s better to start simple and evolve a design as needed.”
-
 1971, in The Psychology of Computer Programming, Gerald Weinberg wrote, “We
 shall be hampered by our inability to measure the goodness of programs on an
 absolute scale. But can we perhaps measure them on a relative scale—can we say
@@ -511,6 +523,8 @@ and they always come out well done.
     (https://www.amazon.com/Clean-Code-Handbook-Software-Craftsmanship/dp/0132350882/ref=sr_1_2)
 - Agile Software Development, Principals, Patterns, and Practices, Robert Martin
     (https://www.amazon.com/Software-Development-Principles-Patterns-Practices/dp/0135974445/ref=sr_1_1)
+- Extreme Programming Explained: Embrace Change, 2nd Edition, Kent Beck
+    (https://www.amazon.com/Extreme-Programming-Explained-Embrace-Change/dp/0321278658)
 - A Philosophy of Software Design, John Ousterhout
     (https://www.amazon.com/gp/product/B07N1XLQ7D/ref=kinw_myk_ro_title)
 - Taming Complexity, Jack Ganssle
@@ -520,3 +534,7 @@ and they always come out well done.
     (http://www.hpl.hp.com/hpjournal/pdfs/IssuePDFs/1989-04.pdf)
 - The Magical Number Seven, Plus or Minus Two: Some Limits on Our Capacity for
     Processing Information," Psychological Review, 63 (1956), 81-97
+- Unskilled and Unaware of It: How Difficulties in Recognizing One's Own
+    Incompetence Lead to Inflated Self-Assessments, Justin Kruger and David
+    Dunning
+    (https://psycnet.apa.org/doiLanding?doi=10.1037%2F0022-3514.77.6.1121)
