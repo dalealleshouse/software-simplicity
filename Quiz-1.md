@@ -12,13 +12,15 @@ Classify each source of complexity as either essential or accidental:
 > 1. Essential - software must meet requirements regardless of the inherit
 >    complexity
 > 1. Accidental - the tools used to create software have little bearing on the
->    problem domain.
+>    problem domain. This is the absolute worst type of accidental complexity
+>    because it adds *NO* value to the solution.
 
 
 Is it possible to completely eliminate accidental complexity?
 - Yes
 - No
 
-> No, good design will trend asymptotically toward zero accidental complexity.
+> No, accidental complexity is an asymptote. Unless computers are completely
+> removed from the solution, accidental complexity will exist.
 
 [Go Back](README.md#quiz-1)

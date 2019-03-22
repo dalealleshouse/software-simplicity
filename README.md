@@ -34,6 +34,10 @@ Pretty much every software engineering luminary espouses simplicity:
     will facilitate all future attempts to understand the system — attempts of
     any kind. - Ben Moseley and Peter Marks
 
+Complexity Side Effects
+- Decreased reliability
+- Increased development time/cost
+
 > ### Axiom #1 of software engineering:
 >
 > Every software professional's primary goal should be to create the simplest
@@ -56,12 +60,17 @@ Two papers about complexity that every software professional should read:
 - No Silver Bullet, Fred Brooks, 1986
 - Out of the Tar Pit, Ben Moseley and Peter Marks, 2006
 
+Fred Brooks introduced the concept of complexity bifurcation. He postulated that
+there are two types: essential and accidental. Ben Moseley and Peter Marks
+expanded the concept. 
+
 Two Types of Complexity:
-- *Essential Complexity* - is inherit in, and the essence of, the problem (as
-    seen by the user)
-- *Accidental Complexity* - Complexity with which the development team would not
-    have to deal in the ideal world (complexity arising from performance issues
-    and from suboptimal language and infrastructure)
+- *Essential Complexity* - "is inherit in, and the essence of, the problem (as
+    seen by the user)" (Out of the Tar Pit)
+- *Accidental Complexity* - "Complexity with which the development team would
+    not have to deal in the ideal world (complexity arising from performance
+    issues and from suboptimal language and infrastructure)" (Out of the Tar
+    Pit)
     
 > ### Key Concept:
 >
@@ -81,6 +90,8 @@ Two Types of Complexity:
 > [Answers](Quiz-1.md)
 
 ## Why is Avoiding Complexity Difficult?
+
+Find some of Brooks statements about complexity is in defining the problem
 
 Simplicity is somewhat subjective
 - Familiarity is often conflated with Simplicity
@@ -108,11 +119,18 @@ It defies demonstration
     overcomplicate simple code
 - Simplicity is more of a philosophical concept
 
+"complexity is the most serious inherent difficult, but not all complexity is
+inevitable" - Fred Brooks
+
+> Exercise 1:
+>
+> Illustrate why demonstration is important with the Instructor led "following
+> instructions" exercise
+
 > Key Concept:
 >
 > What is simple to one may be complex to another. The subjective nature of the
-> topic often leads to attitudes resembling gnosticism. Simplicity is the result
-> of deliberate and vigilant effort.
+> topic often leads to attitudes resembling gnosticism. 
 
 ## Recognizing Complexity
 
@@ -133,6 +151,9 @@ over-engineering
     Nietzsche
 
 ![XKCD](xkcd-simplicity.png)
+
+Plan for the future but never try to predict it - This is a load of garbage.
+Nothing more than talking about of both sides of the mouth.
 
 
 ## How to avoid Complexity
